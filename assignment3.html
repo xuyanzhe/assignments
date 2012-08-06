@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>jQuery Exercises</title>
+<script type="text/javascript" src="jquery-1.6.4.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+
+<script type="text/javascript">
+function myFunction()
+{
+alert("Button was clicked!");
+}
+$(document).ready(function(){
+  $("#hide").click(function(){
+    $("#hidebox").hide();
+  });
+  $("#show").click(function(){
+    $("#hidebox").show();
+  });
+});
+</script>
+
+
+
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript"> 
+$(document).ready(function(){
+  $("#clickslide").click(function(){
+    $("#slider").slideToggle("slow");
+
+  });
+});
+
+</script>
+
+
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $("#fader").click(function(){
+    $("#fader").fadeOut();
+  });
+  $("#button").click(function(){
+    $("#fader").fadeIn();
+  });
+});
+
+
+
+
+</script>
+
+<style type="text/css">
+ img
+{
+ position:absolute;
+}
+</style>
+
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript"> 
+$(document).ready(function()
+  {
+  $("#greenbox").click(function(){
+    $("#animator").animate({height:"300px"});
+  });
+  $("#reset").click(function(){
+    $("#animator").animate({height:"100px"});
+  });
+});
+
+</script> 
+
+
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript"> 
+document.onmousedown=coordinates;
+document.onmouseup=mouseup;
+
+function coordinates(e)
+{
+if (e == null) { e = window.event;}
+var sender = (typeof( window.event)!="undefined")?e.srcElement:e.target;
+
+if (sender.id=="moveMe")
+  {
+  mouseover=true;
+  pleft=parseInt(movMeId.style.left);
+  ptop=parseInt(movMeId.style.top);
+  xcoor=e.clientX;
+  ycoor=e.clientY;
+  document.onmousemove=moveImage;
+  return false;
+  }
+else {return false;}
+}
+
+function moveImage(e)
+{
+if (e==null){e =window.event;}
+movMeId.style.left=pleft+e.clientX-xcoor+"px";
+movMeId.style.top=ptop+e.clientY-ycoor+"px";
+return false;
+}
+
+function mouseup(e)
+{
+document.onmousemove=null;
+}
+</script>
+
+<script type="text/javascript">
+movMeId=document.getElementById("moveMe");
+movMeId.style.top="500px";
+movMeId.style.left="500px";
+</script>
+
+
+<link href="xyzjquery.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css"> 
+div.panel,p.flip
+{
+margin:0px;
+padding:5px;
+text-align:center;
+background:#FCC;
+border:solid 1px #c3c3c3;
+text:
+}
+div.panel
+{
+height:450px;
+display:none;
+}
+#draggable{
+	position:relative;
+ }
+</style>
+
+</head>
+
+
+
+
+
+
+
+<body>
+
+<input type="button" onclick="myFunction()" value="Click Me" />
+
+<div id="hide"> Hide </div>
+
+<div id="show"> Show </div>
+
+<div id="hidebox">
+	<p>I'm a ghost.</p>
+  </div>
+   
+<div id="clickslide">
+	<p> Click to slide box </p>
+</div>
+
+<div id="slider">
+	<p> Oh hey, I slid. </p>
+</div>
+
+<p>This box will fade into oblivion if you click on it...</p>
+
+<div id="fader">
+
+</div>
+
+<div id="button">
+<button type="button">Bring brown box!</button>
+</div>
+
+<br /><br />
+
+<div id="greenbox">
+<button>Resize this green box!</button>
+</div>
+
+<div id="animator">
+</div>
+
+<div id="reset">
+<button>Reset</button>
+</div>
+
+
+
+<h2>Please drag me!</h2>
+<div id="draggable">
+
+ <img id="moveMe" src="logo.jpeg" alt="ischool" width="400" height="80"/>
+<p>Drag the image</p>
+</div>
+
+
+</body>
+</html>
+
