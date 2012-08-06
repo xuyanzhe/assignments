@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Yanzhe Xu's Olympic pictures in my country</title>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="js/lightbox.js"></script>
+	 <link href="css/lightbox2.css" rel="stylesheet" type="text/css" media="screen"/>
+     <link href="css/style.css" rel="stylesheet" type="text/css" media="screen"/>
+  
+   <script type="text/javascript">
+
+		function multiquery(data) {
+
+		var element;
+
+			for (idx in data.data) {
+
+			element = data.data[idx];
+
+			$(".pics").append("<a target='_blank' href='" + element.images.standard_resolution.url +
+
+			"' rel=\"lightbox\"><img src='" + element.images.thumbnail.url +"' alt=\"instagram\"></img></a>");
+
+			}
+
+		}
+
+	</script>
+
+	
+
+	<script type="text/javascript">
+
+		function soccerquery(data) {
+
+		var element;
+
+			for (idx in data.data) {
+
+			element = data.data[idx];
+
+			$(".olympicsrings").append("<a target='_blank' href='" + element.images.standard_resolution.url +
+
+			"' rel=\"lightbox\"><img src='" + element.images.thumbnail.url +"' alt=\"instagram\"></img></a>");
+
+			}
+
+		}
+
+	</script>
+
+	
+
+	<script type="text/javascript">
+
+		function swimquery(data) {
+
+		var element;
+
+			for (idx in data.data) {
+
+			element = data.data[idx];
+
+			$(".diving ").append("<a target='_blank' href='" + element.images.standard_resolution.url +
+
+			"' rel=\"lightbox\"><img src='" + element.images.thumbnail.url +"' alt=\"instagram\"></img></a>");
+
+			}
+
+		}
+
+	</script>
+
+	
+
+	<script type="text/javascript">
+
+		function judoquery(data) {
+
+		var element;
+
+			for (idx in data.data) {
+
+			element = data.data[idx];
+
+			$(".badminton").append("<a target='_blank' href='" + element.images.standard_resolution.url +
+
+			"' rel=\"lightbox\"><img src='" + element.images.thumbnail.url +"' alt=\"instagram\"></img></a>");
+
+			}
+
+		}
+
+	</script>
+
+	
+
+	<script type="text/javascript">
+
+		function frenchquery(data) {
+
+		var element;
+
+			for (idx in data.data) {
+
+			element = data.data[idx];
+
+			$(".chinaTeams").append("<a target='_blank' href='" + element.images.standard_resolution.url +
+
+			"' rel=\"lightbox\"><img src='" + element.images.thumbnail.url +"' alt=\"instagram\"></img></a>");
+
+			}
+
+		}
+
+	</script>
+
+	
+
+	<script type="text/javascript">
+
+		function villagequery(data) {
+
+		var element;
+
+			for (idx in data.data) {
+
+			element = data.data[idx];
+
+			$(".village").append("<a target='_blank' href='" + element.images.standard_resolution.url +
+
+			"' rel=\"lightbox\"><img src='" + element.images.thumbnail.url +"' alt=\"instagram\"></img></a>");
+
+			}
+
+		}
+
+	</script>
+
+	
+
+	<script type="text/javascript">
+
+		function tonyquery(data) {
+
+		var element;
+
+			for (idx in data.data) {
+
+			element = data.data[idx];
+
+			$(".tony").append("<a target='_blank' href='" + element.images.standard_resolution.url +
+
+			"' rel=\"lightbox\"><img src='" + element.images.thumbnail.url +"' alt=\"instagram\"></img></a>");
+
+			}
+
+		}
+
+	</script>
+
+	
+
+	<script type="text/javascript">
+
+		function michaelquery(data) {
+
+		var element;
+
+			for (idx in data.data) {
+
+			element = data.data[idx];
+
+			$(".michael").append("<a target='_blank' href='" + element.images.standard_resolution.url +
+
+			"' rel=\"lightbox\"><img src='" + element.images.thumbnail.url +"' alt=\"instagram\"></img></a>");
+
+			}
+
+		}
+
+	</script>
+
+ 
+
+	<script type="text/javascript">
+
+		function queryVillage() {
+
+		$(".village").empty();
+
+			$.ajax({
+
+				type: "GET",
+
+				dataType: "jsonp",
+
+				cache: false,
+
+				url: "https://api.instagram.com/v1/media/search?lat=51.548577&lng=-0.007685&distance=5000?client_id=85753c2ff7d74a60b457983702c74a1f&access_token=201217738.85753c2.c97421ae71754fb9bc8b4ede43a027d9",
+
+				success: villagequery
+
+				});
+
+				setTimeout("queryVillage()", 30*1000);
+
+			}
+
+	</script>
+
+	
+
+	<script type="text/javascript">
+
+		function queryOlympics() {
+
+			$.ajax({
+
+				type: "GET",
+
+				dataType: "jsonp",
+
+				cache: false,
+
+				url: "https://api.instagram.com/v1/tags/Olympics/media/recent?client_id=85753c2ff7d74a60b457983702c74a1f",
+
+				success: multiquery
+
+				});
+
+			}
+
+	</script>
+
+	
+
+	<script type="text/javascript">
+
+		function querysoccer() {
+
+		$(".olympicsrings").empty();
+
+			$.ajax({
+
+				type: "GET",
+
+				dataType: "jsonp",
+
+				cache: false,
+
+				url: "https://api.instagram.com/v1/tags/Olympicrings/media/recent?client_id=2e7324ad2f7443469ed02157bc4f3162",
+
+				success: soccerquery
+
+				});
+
+				setTimeout("querysoccer()", 30*1000);
+
+			}
+
+	</script>
+
+	
+
+	<script type="text/javascript">
+
+		function queryswim() {
+
+		$(".diving ").empty();
+
+			$.ajax({
+
+				type: "GET",
+
+				dataType: "jsonp",
+
+				cache: false,
+
+				url: "https://api.instagram.com/v1/tags/Olympicdiving/media/recent?client_id=85753c2ff7d74a60b457983702c74a1f",
+
+				success: swimquery
+
+				});
+
+				setTimeout("queryswim()", 30*1000);
+
+			}
+
+	</script>
+
+	
+
+	<script type="text/javascript">
+
+		function queryjudo() {
+
+		$(".badminton").empty();
+
+			$.ajax({
+
+				type: "GET",
+
+				dataType: "jsonp",
+
+				cache: false,
+
+				url: "https://api.instagram.com/v1/tags/olympicbadminton/media/recent?client_id=85753c2ff7d74a60b457983702c74a1f",
+
+				success: judoquery
+
+				});
+
+				setTimeout("queryjudo()", 30*1000);
+
+			}
+
+	</script>
+
+	
+
+	<script type="text/javascript">
+
+		function queryFrench() {
+
+		$(".chinaTeams").empty();
+
+			$.ajax({
+
+				type: "GET",
+
+				dataType: "jsonp",
+
+				cache: false,
+
+				url: "https://api.instagram.com/v1/tags/chinateam/media/recent?client_id=85753c2ff7d74a60b457983702c74a1f",
+
+				success: frenchquery
+
+				});
+
+				setTimeout("queryFrench()", 30*1000);
+
+			}
+
+	</script>
+
+	
+
+	<script type="text/javascript">
+
+		function queryLondon() {
+
+			$.ajax({
+
+				type: "GET",
+
+				dataType: "jsonp",
+
+				cache: false,
+
+				url: "https://api.instagram.com/v1/tags/London/media/recent?client_id=85753c2ff7d74a60b457983702c74a1f",
+
+				success: multiquery
+
+				});
+
+			}
+
+	</script>
+
+	
+
+	<script type="text/javascript">
+
+		function queryOlympicTorch() {
+
+			$.ajax({
+
+				type: "GET",
+
+				dataType: "jsonp",
+
+				cache: false,
+
+				url: "https://api.instagram.com/v1/tags/OlympicTorch/media/recent?client_id=85753c2ff7d74a60b457983702c74a1f",
+
+				success: multiquery
+
+				});
+
+			}
+
+	</script>
+
+	
+
+	<script type="text/javascript">
+
+		function queryTony() {
+
+		$(".tony").empty();
+
+			$.ajax({
+
+				type: "GET",
+
+				dataType: "jsonp",
+
+				cache: false,
+
+				url: "https://api.instagram.com/v1/users/187730427/media/recent?client_id=85753c2ff7d74a60b457983702c74a1f&access_token=201217738.85753c2.c97421ae71754fb9bc8b4ede43a027d9",
+
+				success: tonyquery
+
+				});
+
+				setTimeout("queryTony()", 30*1000);
+
+			}
+
+	</script>
+
+	
+
+	<script type="text/javascript">
+
+		function queryMichael() {
+
+		$(".michael").empty();
+
+			$.ajax({
+
+				type: "GET",
+
+				dataType: "jsonp",
+
+				cache: false,
+
+				url: "https://api.instagram.com/v1/users/186987684/media/recent?client_id=85753c2ff7d74a60b457983702c74a1f&access_token=201217738.85753c2.c97421ae71754fb9bc8b4ede43a027d9",
+
+				success: michaelquery
+
+				});
+
+				setTimeout("queryMichael()", 30*1000);
+
+			}
+
+	</script>
+
+	
+
+	<script type="text/javascript">	
+
+		jQuery(function() {
+
+			$(document).ready(function() {
+
+				$("#olympics").click(function() {
+
+					$(".pics").empty();
+
+					queryOlympics();
+
+				});
+
+			});
+
+		});
+
+	</script>
+
+	
+
+	<script type="text/javascript">	
+
+		jQuery(function() {
+
+			$(document).ready(function() {
+
+				$("#london").click(function() {
+
+					$(".pics").empty();
+
+					queryLondon();
+
+				});
+
+			});
+
+		});
+
+	</script>
+
+	
+
+	<script type="text/javascript">	
+
+		jQuery(function() {
+
+			$(document).ready(function() {
+
+				$("#olympictorch").click(function() {
+
+					$(".pics").empty();
+
+					queryOlympicTorch();
+
+				});
+
+			});
+
+		});
+
+	</script>
+
+	
+
+	<script type="text/javascript">
+
+		queryOlympics();
+
+		querysoccer();
+
+		queryswim();
+
+		queryjudo();
+
+		queryVillage();
+
+		queryTony();
+
+		queryMichael();
+
+		queryFrench();
+
+	</script>
+
+	
+
+</head>
+
+ 
+
+<body>
+
+	<div id="header">
+
+		<h1 id="title">Yanzhe Xu's Olympic pictures in my country<span id="Yanzhe"><img id="logo" src="logo.jpg" alt=" logo"/></span></h1>
+
+	</div>
+
+<br />
+
+	
+
+	<div id="secondrow">
+
+	
+
+		<div id="tags">
+
+			<span id="olympics"><h1>Olympics</h1> </span>
+
+		</div>
+
+		<div class="pics">
+
+		</div>
+
+		<hr /><br />
+
+        <h1> china </h1>
+
+		<div class="chinaTeams">
+
+		</div>
+
+		<hr />
+
+		<h1> Diving </h1>
+
+		<div class="diving ">
+
+		</div>
+
+		<hr />
+		<br />
+
+		<h1>Badminton </h1>
+
+		<div class="badminton">
+
+		</div>
+
+		<hr /><br />
+
+		<h1>Olympics village </h1>
+
+		<div class="village">
+
+		</div>
+
+		<hr /><br />
+
+		<h1>Soccers</h1>
+
+		<div class="tony">
+
+		</div>
+
+		<hr /><br />
+
+		<h1>Swimming</h1>
+
+		<div class="michael">
+
+		</div>
+
+		<hr /><br />
+
+		
+
+	</div>
+
+</body>
+
+</html>
