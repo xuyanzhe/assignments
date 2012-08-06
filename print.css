@@ -1,0 +1,49 @@
+
+.body{
+font-family:"Times New Roman",Times,serif;
+background-image:url(http://people.ischool.berkeley.edu/~i153-021/i153/a2/imgxiaohui.jpg);
+background-size:1000px,1000px;
+background-position: 50% 50%;
+background-repeat:no-repeat;
+}
+
+.education {
+       font-weight: bolder;
+       text-align: center;
+       }
+
+.publication {
+       font-weight: bolder;
+       text-align: center;
+       }
+
+.Researches {
+       font-weight: bolder;
+       text-align: center;
+       }
+
+.Internship {
+       font-weight: bolder;
+       text-align: center;
+       }
+
+.Activities {
+       font-weight: bolder;
+       text-align: center;
+       }
+
+.Patents {
+       font-weight: bolder;
+       text-align: center;
+       }
+
+
+.tests{
+        font-weight: bolder;
+       text-align: center;
+}
+
+.scholarships{
+       font-weight: bolder;
+       text-align: center;
+       }
